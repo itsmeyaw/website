@@ -6,7 +6,7 @@ const NameCard = ({scale}) => {
     return (
         <div className="w-full dark:bg-background-900">
             <Helmet>
-                <script src={'../../namecard.js'} type={'text/javascript'}/>
+                <script src={'../../namecard.js'} type={'text/javascript'} defer={true}/>
             </Helmet>
             <svg width="100%" height="100%" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" className="namecard">
                 <g transform="matrix(1,0,0,1,-496.911,89.3954)" className="fill-black dark:fill-white">
