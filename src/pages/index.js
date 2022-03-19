@@ -4,86 +4,66 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import NameCard from "../components/namecard"
+import BoxedLayout from "../components/boxedlayout"
+import IntroductionSection from "../components/introduction-section"
+import Experience from "../components/experience"
+import Education from "../components/education"
+import Award from "../components/award"
+import Mylink from "../components/mylink"
+import Footer from "../components/footer"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
+const Index = ({ data, location }) => {
     return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
+        <div className="w-full dark:bg-background-900 dark:text-white">
+            <NameCard scale={1}/>
+            <BoxedLayout>
+                <Seo title={'Yudhistira Wibowo'}/>
+                <IntroductionSection title={'about-me'}>
+                    Hello, I am Yudhis, nice to meet you!<br/>
+                    I am currently studying Computer Science at TUM 🇩🇪<br/>
+                    My hobby is tinkering with stuff that I learned especially in programming.
+                </IntroductionSection>
+                <IntroductionSection title={'experiences'}>
+                    <Experience from={'May 2021'} to={'Current'} title={'Working Student (Software Developer)'} company={'Siemens AG.'}>
+                        Developing web application using Java.
+                    </Experience>
+                    <Experience from={'November 2020'} to={'January 2021'} title={'Tutor'} company={'Technical University of Munich'}>
+                        Teach Java in Basic Programming Practical Course (Praktikum: Grundlage der Programmierung).
+                    </Experience>
+                </IntroductionSection>
+                <IntroductionSection title={'educations'}>
+                    <Education from={'October 2019'} to={'Current'} title={'B, Sc. Informatics'} institution={'Technical University of Munich'}/>
+                    <Education from={'April 2019'} to={'September 2019'} title={'T-Kurs'} institution={'Studienkolleg Kaiserslautern'}/>
+                    <Education from={'July 2015'} to={'May 2018'} title={'Natural science'} institution={'Senior High School 8 Yogyakarta'}/>
+                </IntroductionSection>
+                <IntroductionSection title={'awards'}>
+                    <Award date={'October 2019'} title={'Deutschlandstipendium Awardee for period 2021 - 2022'}/>
+                </IntroductionSection>
+                <IntroductionSection title={'contacts'}>
+                    <div className={'mb-3'}>
+                        <span className={'font-bold font-sans'}>Email</span>
+                        <br/>
+                        yudhistira.wibowo[at]itsmeyaw.id
+                        <br/>
+                        <Mylink href={'../../pgp.pub'} className={'text-sm font-bold'}>PGP Public Key</Mylink> <span className={'text-sm'}>|</span> <Mylink href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'text-sm font-bold'}>PGP Private Key</Mylink>
+                        <br/>
+                        <span className={'text-sm'}>PGP Fingerprint: <code className={'font-mono'}>9E7B CE5A 3573 716B EA7F  DBCC F479 E273 3B3D FA38</code></span>
+                    </div>
+                    <div className={'mb-3'}>
+                        <Mylink href={'https://www.linkedin.com/in/itsmeyaw/'} className={'font-bold'} target={'_blank'}>LinkedIn</Mylink>
+                    </div>
+                    <div className={'mb-3'}>
+                        <Mylink href={'https://github.com/itsmeyaw'} className={'font-bold font-sans dark:text-amber-200 hover:underline'} target={'_blank'}>GitHub</Mylink>
+                    </div>
+                    <div className={'mb-3'}>
+                        <Mylink href={'https://www.instagram.com/itsmeyaw.id/'} className={'font-bold font-sans dark:text-amber-200 hover:underline'} target={'_blank'}>Instagram</Mylink>
+                    </div>
+                </IntroductionSection>
+                <Footer/>
+            </BoxedLayout>
+        </div>
     )
-  }
-
-  return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
-    </Layout>
-  )
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
-      }
-    }
-  }
-`
+export default Index

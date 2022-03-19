@@ -1,13 +1,14 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "itsmeyaw-web",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "The personal website of Yudhistira Wibowo",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Yudhistira Wibowo <yudhistira.wibowo@itsmeyaw.id>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/itsmeyaw/website/issues"
   },
   "dependencies": {
+    "@fontsource/merriweather": "^4.5.5",
     "gatsby": "^4.8.0",
     "gatsby-plugin-feed": "^4.8.0",
     "gatsby-plugin-gatsby-cloud": "^4.8.0",
@@ -30,10 +31,17 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "@fontsource/dm-sans": "4.5.2",
+    "@fontsource/dm-serif-text": "4.5.2",
+    "@fontsource/jetbrains-mono": "4.5.3"
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "autoprefixer": "^10.4.2",
+    "gatsby-plugin-postcss": "^5.8.0",
+    "postcss": "^8.4.7",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.23"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
