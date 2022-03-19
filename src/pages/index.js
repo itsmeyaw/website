@@ -44,7 +44,7 @@ const Index = ({ data, location }) => {
                     <div className={'mb-3'}>
                         <span className={'font-bold font-sans'}>Email</span>
                         <br/>
-                        yudhistira.wibowo[at]itsmeyaw.id
+                        <span className={''}>yudhistira.wibowo[at]itsmeyaw.id</span>
                         <br/>
                         <Mylink href={'../../pgp.pub'} className={'text-sm font-bold'}>PGP Public Key</Mylink> <span className={'text-sm'}>|</span> <Mylink href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'text-sm font-bold'}>PGP Private Key</Mylink>
                         <br/>
