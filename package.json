@@ -8,13 +8,19 @@
     "url": "https://github.com/itsmeyaw/website/issues"
   },
   "dependencies": {
+    "@fontsource/dm-sans": "4.5.2",
+    "@fontsource/dm-serif-text": "4.5.2",
+    "@fontsource/jetbrains-mono": "4.5.3",
     "@fontsource/merriweather": "^4.5.5",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "gatsby": "^4.8.0",
     "gatsby-plugin-feed": "^4.8.0",
     "gatsby-plugin-gatsby-cloud": "^4.8.0",
     "gatsby-plugin-google-analytics": "^4.8.0",
     "gatsby-plugin-image": "^2.8.0",
     "gatsby-plugin-manifest": "^4.8.0",
+    "gatsby-plugin-mdx": "^3.10.1",
     "gatsby-plugin-offline": "^5.8.0",
     "gatsby-plugin-react-helmet": "^5.8.0",
     "gatsby-plugin-sharp": "^4.8.0",
@@ -31,10 +37,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "@fontsource/dm-sans": "4.5.2",
-    "@fontsource/dm-serif-text": "4.5.2",
-    "@fontsource/jetbrains-mono": "4.5.3"
+    "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

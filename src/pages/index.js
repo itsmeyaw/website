@@ -12,10 +12,11 @@ import Education from "../components/education"
 import Award from "../components/award"
 import Mylink from "../components/mylink"
 import Footer from "../components/footer"
+import Container from "../components/container"
 
 const Index = ({ data, location }) => {
     return (
-        <div className="w-full dark:bg-background-900 dark:text-white">
+        <Container>
             <NameCard scale={1}/>
             <BoxedLayout>
                 <Seo title={'Yudhistira Wibowo'}/>
@@ -62,7 +63,7 @@ const Index = ({ data, location }) => {
                 </IntroductionSection>
                 <Footer/>
             </BoxedLayout>
-        </div>
+        </Container>
     )
 }
 
