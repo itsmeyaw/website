@@ -12,10 +12,11 @@ import Education from "../components/education"
 import Award from "../components/award"
 import Mylink from "../components/mylink"
 import Footer from "../components/footer"
+import Container from "../components/container"
 
 const Index = ({ data, location }) => {
     return (
-        <div className="w-full dark:bg-background-900 dark:text-white">
+        <Container>
             <NameCard scale={1}/>
             <BoxedLayout>
                 <Seo title={'Yudhistira Wibowo'}/>
@@ -44,7 +45,7 @@ const Index = ({ data, location }) => {
                     <div className={'mb-3'}>
                         <span className={'font-bold font-sans'}>Email</span>
                         <br/>
-                        yudhistira.wibowo[at]itsmeyaw.id
+                        <span className={''}>yudhistira.wibowo[at]itsmeyaw.id</span>
                         <br/>
                         <Mylink href={'../../pgp.pub'} className={'text-sm font-bold'}>PGP Public Key</Mylink> <span className={'text-sm'}>|</span> <Mylink href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'text-sm font-bold'}>PGP Private Key</Mylink>
                         <br/>
@@ -62,7 +63,7 @@ const Index = ({ data, location }) => {
                 </IntroductionSection>
                 <Footer/>
             </BoxedLayout>
-        </div>
+        </Container>
     )
 }
 
