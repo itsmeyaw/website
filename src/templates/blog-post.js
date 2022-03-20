@@ -11,11 +11,11 @@ import Footer from "../components/footer"
 import Mylink from "../components/mylink";
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+    const post = data.markdownRemark
+    const siteTitle = data.site.siteMetadata?.title || `Title`
+    const { previous, next } = data
 
-  return (
+    return (
       <Container>
           <BoxedLayout>
               <Seo
@@ -30,7 +30,6 @@ const BlogPostTemplate = ({ data, location }) => {
                       title={post.frontmatter.title}
                       date={post.frontmatter.date}/>
                   <section
-                      className={'text-lg'}
                       dangerouslySetInnerHTML={{ __html: post.html }}
                       itemProp="articleBody"
                   />

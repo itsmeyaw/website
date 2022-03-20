@@ -26,12 +26,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-page-creator",
-      options: {
-        path: `${__dirname}/content/blog`,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -44,6 +38,9 @@ module.exports = {
         name: `pgp.pub`,
         path: `${__dirname}/static/pgp.pub`,
       },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx-frontmatter'
     },
     {
       resolve: `gatsby-plugin-mdx`,
@@ -65,28 +62,7 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 720,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
+        extensions: [`.md`, `.mdx`],
       },
     },
     `gatsby-transformer-sharp`,
