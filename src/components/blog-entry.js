@@ -1,5 +1,4 @@
 import * as React from "react"
-import {Link} from "gatsby";
 import Mylink from "./mylink";
 
 const BlogEntry = ({title, date, link, excerpt}) => {
