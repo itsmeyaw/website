@@ -43,7 +43,7 @@ const Index = ({ data, location }) => {
                     <Education from={'July 2015'} to={'May 2018'} title={'Natural science'} institution={'Senior High School 8 Yogyakarta'}/>
                 </IntroductionSection>
                 <IntroductionSection title={'awards'}>
-                    <Award date={'October 2019'} title={'Deutschlandstipendium Awardee for period 2021 - 2022'}/>
+                    <Award date={'October 2021'} title={'Deutschlandstipendium Awardee for period 2021 - 2022'}/>
                 </IntroductionSection>
                 <IntroductionSection title={'contacts'}>
                     <div className={'mb-3'}>
