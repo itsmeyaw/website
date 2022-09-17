@@ -13,6 +13,7 @@ import Award from "../components/award"
 import Mylink from "../components/mylink"
 import Footer from "../components/footer"
 import Container from "../components/container"
+import Talk from "../components/talk";
 
 const Index = ({ data, location }) => {
     return (
@@ -30,7 +31,7 @@ const Index = ({ data, location }) => {
                         Developing web application using Java.
                     </Experience>
                     <Experience from={'November 2020'} to={'January 2021'} title={'Tutor'} company={'Technical University of Munich'}>
-                        Teach Java in Basic Programming Practical Course (Praktikum: Grundlage der Programmierung).
+                        Teach Java in Basic Programming Practical Course (<em>Praktikum: Grundlage der Programmierung</em>).
                     </Experience>
                 </IntroductionSection>
                 <IntroductionSection title={'educations'}>
@@ -40,6 +41,12 @@ const Index = ({ data, location }) => {
                 </IntroductionSection>
                 <IntroductionSection title={'awards'}>
                     <Award date={'October 2019'} title={'Deutschlandstipendium Awardee for period 2021 - 2022'}/>
+                </IntroductionSection>
+                <IntroductionSection title={'talks'}>
+                    <Talk date={'17 September 2022'} title={'Study in Germany'} event={'After Campus Session'} eo={'Universitas Indonesia'}>
+                        Explained about further study chance as a graduate in Germany and possible scholarships in Germany.
+                        <br/>Shared experiences with Deutschlandstipendium
+                    </Talk>
                 </IntroductionSection>
                 <IntroductionSection title={'contacts'}>
                     <div className={'mb-3'}>
