@@ -16,7 +16,8 @@ module.exports = {
     fontFamily: {
       'sans': ['DM Sans'],
       'serif': ['DM Serif Text'],
-      'mono': ['JetBrains Mono']
+      'mono': ['JetBrains Mono'],
+      'quote': ['Work Sans']
     }
   },
   plugins: [],

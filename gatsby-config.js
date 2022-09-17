@@ -14,6 +14,7 @@ module.exports = {
       orcid: `0000-0001-9065-2114`,
       github: `itsmeyaw`
     },
+    postsPerPage: 5,
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -26,10 +27,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-mdx-frontmatter'
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

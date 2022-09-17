@@ -1,8 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
 import Seo from "../components/seo"
 import NameCard from "../components/namecard"
 import BoxedLayout from "../components/boxedlayout"
@@ -10,12 +7,15 @@ import IntroductionSection from "../components/introduction-section"
 import Experience from "../components/experience"
 import Education from "../components/education"
 import Award from "../components/award"
-import Mylink from "../components/mylink"
+import MyLink from "../components/myLink"
 import Footer from "../components/footer"
 import Container from "../components/container"
 import {Helmet} from "react-helmet";
+import {graphql} from "gatsby"
 
-const Index = ({ data, location }) => {
+const Index = ({data}) => {
+    const siteMetadata = data['site']['siteMetadata']
+
     return (
         <Container>
             <Helmet>
@@ -23,7 +23,7 @@ const Index = ({ data, location }) => {
             </Helmet>
             <NameCard scale={1}/>
             <BoxedLayout>
-                <Seo title={'Yudhistira Wibowo'}/>
+                <Seo title={siteMetadata.author.name}/>
                 <IntroductionSection title={'about-me'}>
                     Hello, I am Yudhis, nice to meet you!<br/>
                     I am currently studying Computer Science at TUM 🇩🇪<br/>
@@ -51,18 +51,24 @@ const Index = ({ data, location }) => {
                         <br/>
                         <span className={''}>yudhistira.wibowo[at]itsmeyaw.id</span>
                         <br/>
-                        <Mylink href={'https://keybase.io/itsmeyaw/pgp_keys.asc'} className={'text-sm font-bold'}>PGP Public Key</Mylink> <span className={'text-sm'}>|</span> <Mylink href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'text-sm font-bold'}>PGP Private Key</Mylink>
+                        <MyLink href={'https://keybase.io/itsmeyaw/pgp_keys.asc'} className={'text-sm font-bold'}>PGP Public Key</MyLink> <span className={'text-sm'}>|</span> <MyLink href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'text-sm font-bold'}>PGP Private Key</MyLink>
                         <br/>
                         <span className={'text-sm'}>PGP Fingerprint: <code className={'font-mono'} id={'fingerprint-placeholder'}/></span>
                     </div>
                     <div className={'mb-3'}>
-                        <Mylink href={'https://www.linkedin.com/in/itsmeyaw/'} className={'font-bold'} target={'_blank'}>LinkedIn</Mylink>
+                        <MyLink to={'/blog'} className={'font-bold'}>Blog</MyLink>
                     </div>
                     <div className={'mb-3'}>
-                        <Mylink href={'https://github.com/itsmeyaw'} className={'font-bold font-sans dark:text-amber-200 hover:underline'} target={'_blank'}>GitHub</Mylink>
+                        <MyLink href={`https://www.linkedin.com/in/${siteMetadata.social.linkedin}/`} className={'font-bold'} target={'_blank'}>LinkedIn</MyLink>
                     </div>
                     <div className={'mb-3'}>
-                        <Mylink href={'https://www.instagram.com/itsmeyaw.id/'} className={'font-bold font-sans dark:text-amber-200 hover:underline'} target={'_blank'}>Instagram</Mylink>
+                        <MyLink href={`https://github.com/${siteMetadata.social.github}/`} className={'font-bold'} target={'_blank'}>GitHub</MyLink>
+                    </div>
+                    <div className={'mb-3'}>
+                        <MyLink href={`https://www.instagram.com/${siteMetadata.social.instagram}/`} className={'font-bold'} target={'_blank'}>Instagram</MyLink>
+                    </div>
+                    <div className={'mb-3'}>
+                        <MyLink href={`https://orcid.org/${siteMetadata.social.orcid}`} className={'font-bold'} target={'_blank'}>Orcid</MyLink>
                     </div>
                 </IntroductionSection>
                 <Footer/>
@@ -70,5 +76,26 @@ const Index = ({ data, location }) => {
         </Container>
     )
 }
+
+export const PageQuery = graphql`
+query {
+  site {
+    siteMetadata {
+      social {
+        twitter
+        orcid
+        linkedin
+        instagram
+        github
+      }
+      author {
+        name
+        summary
+      }
+      title
+    }
+  }
+}
+`
 
 export default Index
