@@ -14,10 +14,14 @@ import Mylink from "../components/mylink"
 import Footer from "../components/footer"
 import Container from "../components/container"
 import Talk from "../components/talk";
+import {Helmet} from "react-helmet";
 
 const Index = ({ data, location }) => {
     return (
         <Container>
+            <Helmet>
+                <script type={'text/javascript'} src={'../keybase.js'}/>
+            </Helmet>
             <NameCard scale={1}/>
             <BoxedLayout>
                 <Seo title={'Yudhistira Wibowo'}/>
@@ -54,9 +58,9 @@ const Index = ({ data, location }) => {
                         <br/>
                         <span className={''}>yudhistira.wibowo[at]itsmeyaw.id</span>
                         <br/>
-                        <Mylink href={'../../pgp.pub'} className={'text-sm font-bold'}>PGP Public Key</Mylink> <span className={'text-sm'}>|</span> <Mylink href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'text-sm font-bold'}>PGP Private Key</Mylink>
+                        <Mylink href={'https://keybase.io/itsmeyaw/pgp_keys.asc'} className={'text-sm font-bold'}>PGP Public Key</Mylink> <span className={'text-sm'}>|</span> <Mylink href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'text-sm font-bold'}>PGP Private Key</Mylink>
                         <br/>
-                        <span className={'text-sm'}>PGP Fingerprint: <code className={'font-mono'}>9E7B CE5A 3573 716B EA7F  DBCC F479 E273 3B3D FA38</code></span>
+                        <span className={'text-sm'}>PGP Fingerprint: <code className={'font-mono'} id={'fingerprint-placeholder'}/></span>
                     </div>
                     <div className={'mb-3'}>
                         <Mylink href={'https://www.linkedin.com/in/itsmeyaw/'} className={'font-bold'} target={'_blank'}>LinkedIn</Mylink>
