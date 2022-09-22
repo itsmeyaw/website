@@ -1,8 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
 import Seo from "../components/seo"
 import NameCard from "../components/namecard"
 import BoxedLayout from "../components/boxedlayout"
@@ -49,7 +46,8 @@ const Index = ({ data, location }) => {
                 <IntroductionSection title={'talks'}>
                     <Talk date={'17 September 2022'} title={'Study in Germany'} event={'After Campus Session'} eo={'Universitas Indonesia'}>
                         Explained about further study chance as a graduate in Germany and possible scholarships in Germany.
-                        <br/>Shared experiences with Deutschlandstipendium
+                        <br/>Shared experiences about time during accepted as Deutschlandstipendium awardee.
+                        <br/><Mylink href={'https://youtu.be/7AUV4q5Z4i8?t=3270'} className={'font-bold'} target={'_blank'}>View my talk on YouTube (in Indonesian)</Mylink>
                     </Talk>
                 </IntroductionSection>
                 <IntroductionSection title={'contacts'}>
@@ -66,10 +64,10 @@ const Index = ({ data, location }) => {
                         <Mylink href={'https://www.linkedin.com/in/itsmeyaw/'} className={'font-bold'} target={'_blank'}>LinkedIn</Mylink>
                     </div>
                     <div className={'mb-3'}>
-                        <Mylink href={'https://github.com/itsmeyaw'} className={'font-bold font-sans dark:text-amber-200 hover:underline'} target={'_blank'}>GitHub</Mylink>
+                        <Mylink href={'https://github.com/itsmeyaw'} className={'font-bold'} target={'_blank'}>GitHub</Mylink>
                     </div>
                     <div className={'mb-3'}>
-                        <Mylink href={'https://www.instagram.com/itsmeyaw.id/'} className={'font-bold font-sans dark:text-amber-200 hover:underline'} target={'_blank'}>Instagram</Mylink>
+                        <Mylink href={'https://www.instagram.com/itsmeyaw.id/'} className={'font-bold'} target={'_blank'}>Instagram</Mylink>
                     </div>
                 </IntroductionSection>
                 <Footer/>
