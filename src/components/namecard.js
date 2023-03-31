@@ -1,10 +1,9 @@
 import * as React from "react"
-import {Link} from "gatsby"
 import {Helmet} from "react-helmet";
 
 const NameCard = ({scale}) => {
     return (
-        <div className="w-full dark:bg-background-900">
+        <div className="w-full dark:bg-background-900 min-h-screen">
             <Helmet>
                 <script src={'../../namecard.js'} type={'text/javascript'} defer={true}/>
             </Helmet>
