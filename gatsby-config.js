@@ -12,7 +12,7 @@ module.exports = {
       instagram: `itsmeyaw.id`,
       linkedin: `itsmeyaw`,
       orcid: `0000-0001-9065-2114`,
-      github: `itsmeyaw`
+      github: `itsmeyaw`,
     },
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-mdx-frontmatter'
+      resolve: 'gatsby-plugin-mdx-frontmatter',
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -46,4 +46,4 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
   ],
-}
+};

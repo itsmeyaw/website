@@ -1,15 +1,15 @@
 .curve {
-    fill: none;
-    stroke-width: 2.5px;
+  fill: none;
+  stroke-width: 2.5px;
 }
 
 .fill-rule-nonzero {
-    fill-rule: nonzero;
+  fill-rule: nonzero;
 }
 
 .namecard {
-    fill-rule:evenodd;
-    clip-rule:evenodd;
-    stroke-linejoin:round;
-    stroke-miterlimit:2;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
 }
