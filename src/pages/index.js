@@ -51,8 +51,14 @@ const Index = ({ data, location }) => {
         </IntroductionSection>
         <IntroductionSection title={'educations'}>
           <Education
-            from={'October 2019'}
+            from={'February 2023'}
             to={'Current'}
+            title={'M, Sc. Informatics'}
+            institution={'Technical University of Munich'}
+          />
+          <Education
+            from={'October 2019'}
+            to={'November 2022'}
             title={'B, Sc. Informatics'}
             institution={'Technical University of Munich'}
           />
